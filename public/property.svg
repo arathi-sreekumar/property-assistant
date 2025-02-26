@@ -1,0 +1,14 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M32 8L8 28H14V52H26V38H38V52H50V28H56L32 8Z" stroke="#F1C40F" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <text x="22" y="34" font-size="18" font-weight="bold" fill="#F1C40F" font-family="Arial, sans-serif">$$</text>
+</svg>
+
+<!-- <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M32 8L8 28H14V52H26V38H38V52H50V28H56L32 8Z" stroke="#4CAF50" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <text x="28" y="36" font-size="18" font-weight="bold" fill="#4CAF50" font-family="Arial, sans-serif">$</text>
+</svg> -->
+
+<!-- <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M32 8L8 28H14V52H26V38H38V52H50V28H56L32 8Z" stroke="#2C3E50" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="#3498DB"/>
+  <text x="28" y="36" font-size="18" font-weight="bold" fill="#F1C40F" font-family="Arial, sans-serif">$</text>
+</svg> -->
