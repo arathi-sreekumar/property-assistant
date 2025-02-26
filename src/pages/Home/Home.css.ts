@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 export const HomeUI = styled('div')`
-  background: white;
+  background: var(--white-800);
   display: flex;
   height: 100vh;
-  width: 1200px;
+  width: var(--max-width);
   margin: 0 auto;
 `

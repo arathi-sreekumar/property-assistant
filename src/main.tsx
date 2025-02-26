@@ -7,6 +7,9 @@ import './common/styles/reset.css'
 import './index.css'
 import App from './App.tsx'
 
+import { GlobalStyles } from './common/styles/global-styles.ts';
+import { ThemeStyles } from './common/styles/default-theme-styles.ts';
+
 import { deferRender } from './mocks/deferRender.ts'
 
 const queryClient = new QueryClient()
@@ -16,6 +19,8 @@ deferRender().then(() => {
     <StrictMode>
       <BrowserRouter>
         <QueryClientProvider client={queryClient}>
+          <GlobalStyles />
+          <ThemeStyles />
           <App />
         </QueryClientProvider>
       </BrowserRouter>
