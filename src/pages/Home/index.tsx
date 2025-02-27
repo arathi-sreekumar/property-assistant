@@ -3,9 +3,9 @@ import { useQuery } from '@tanstack/react-query'
 import { Page } from "../../components/Page"
 import { HomeUI } from "./Home.css"
 import { getPropertyData } from '../../api/property';
+import { Nav } from '../../components/Nav';
 
 export const Home = () => {
-
   const postQuery = useQuery({
     queryKey: ['property'],
     queryFn: async () => {
@@ -22,6 +22,7 @@ export const Home = () => {
 
   return (
     <HomeUI>
+      <Nav />
       <Page>
         <Page.Header id="main-header">Home Page</Page.Header>
         <Page.Content>

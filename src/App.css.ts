@@ -7,5 +7,4 @@ export const AppWrapper = styled('div')`
   min-height: 100vh;
   flex: 1 0 100%;
   color: #111111;
-  padding: 50px 20px;
 `
