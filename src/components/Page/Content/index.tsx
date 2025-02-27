@@ -1,13 +1,15 @@
 import { JSX } from "react"
 import { ContentUI } from "./Content.css"
 
-type Props = {
-  children: JSX.Element | string
+type OwnProps = {
+  children: JSX.Element[] | string
 }
 
-export const Content = ({ children }: Props) => {
+type Props = React.HTMLAttributes<HTMLDivElement> & OwnProps
+
+export const Content = ({ children, ...rest }: Props) => {
   return (
-    <ContentUI>
+    <ContentUI {...rest}>
       {children}
     </ContentUI>
   )
