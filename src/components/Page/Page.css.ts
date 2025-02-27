@@ -6,4 +6,6 @@ export const PageUI = styled('div')`
   width: 100%;
   max-width: var(--max-width);
   background: var(--white-800);
+  margin: 0 auto;
+  padding: 40px;
 `
