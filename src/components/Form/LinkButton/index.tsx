@@ -1,6 +1,6 @@
 import { NavLinkProps } from "react-router";
 
-import { ButtonStyles } from "../../../common/types/form";
+import { ButtonStyles } from "../../../types/form";
 import { LinkButtonUI } from "./LinkButton.css";
 
 interface OwnProps {

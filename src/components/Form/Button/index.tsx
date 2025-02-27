@@ -1,4 +1,4 @@
-import { ButtonStyles } from "../../../common/types/form";
+import { ButtonStyles } from "../../../types/form";
 import { ButtonUI } from "./Button.css";
 
 type Props = {
