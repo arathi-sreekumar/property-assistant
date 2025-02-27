@@ -10,6 +10,7 @@ export const Nav = () => {
         <Logo />
         <NavItemWrapper>
           <NavItem to="/home">Home</NavItem>
+          <NavItem to="/buying/calculator">Buying</NavItem>
         </NavItemWrapper>
       </NavWrapper>
     </NavUI>
