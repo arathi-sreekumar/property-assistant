@@ -6,7 +6,7 @@ export const palette = {
   },
 
   white: {
-    200: '#EDE6D6',
+    300: '#EDE6D6',
     600: '#F5F5F4',
     800: '#FFFFFF',
   },
