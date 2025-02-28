@@ -9,3 +9,7 @@ Create a property assistant to help with buying/selling/renting/letting
 4. Run the following on the project root folder: `npm run dev`
 
 To override local mock server, please change `VITE_MSW_DISABLED` in `.env` to `yes`
+
+Following are links to additional documentation on this site:
+- [UX](/docs/UX.md)
+- [Requirements](/docs/Requirements.md])
