@@ -1,15 +1,12 @@
-import { Page } from "../../components/Page"
-import { Nav } from '../../components/Nav';
-
 import { useAppDispatch, useAppSelector } from "../../state/hooks"
 
-import { LayoutUI } from "./Buying.css"
-import { ColumnUI } from "../../components/Page/Content/Content.css";
 import { Label } from "../../components/Form/Label";
 import { Input } from "../../components/Form/Input";
 import { selectHomeBuyingCost } from "../../state/buying/selector";
 import { useState } from "react";
 import { setHomeCost } from "../../state/buying/actions";
+import { Layout } from "../../components/Page/Layout";
+import { PAGE_TYPE } from "../../common/constants";
 
 export const BuyingCalculator = () => {
   const dispatch = useAppDispatch()
@@ -32,29 +29,21 @@ export const BuyingCalculator = () => {
   }
 
   return (
-    <LayoutUI>
-      <Nav />
-      <Page>
-        <Page.Header id="main-header">Home Buying Costs Calculator</Page.Header>
-        <Page.Content className="two-column">
-          <ColumnUI>
-            <form>
-              <Label>
-                Price of the Home:
-              </Label>
-              <Input
-                type='number'
-                value={localHomeCostState}
-                onBlur={priceChangeHandler}
-                onKeyDown={keyDownHandler}
-                onChange={handleOnChange}
-              />
-            </form>
-          </ColumnUI>
-          <ColumnUI>
-          </ColumnUI>
-        </Page.Content>
-      </Page>
-    </LayoutUI>
+    <Layout
+      pageType={PAGE_TYPE.BUYING_CALCULATOR}
+    >
+      <form>
+        <Label>
+          Price of the Home:
+        </Label>
+        <Input
+          type='number'
+          value={localHomeCostState}
+          onBlur={priceChangeHandler}
+          onKeyDown={keyDownHandler}
+          onChange={handleOnChange}
+        />
+      </form>
+    </Layout>
   )
 }
