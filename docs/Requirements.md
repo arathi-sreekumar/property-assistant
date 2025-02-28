@@ -37,3 +37,7 @@ Total expense when buying house
 Mortgage options?
 Running costs?
 -
+
+See landing page designs below:
+
+![](../public/landing_page.png)
