@@ -2,4 +2,4 @@
 
 ## Color Palette 
 
-![](../../public/color_palette.png)
+![](../public/color_palette.png)
