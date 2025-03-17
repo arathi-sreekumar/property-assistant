@@ -2,7 +2,7 @@ export type LayoutType = 0 | 1
 
 export type PageDisplayInfoModal = {
   layoutType: LayoutType,
-  header: string,
+  header?: string,
   imageUrl?: string,
   imageDescription?: string,
 }

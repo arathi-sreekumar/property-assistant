@@ -14,10 +14,7 @@ export const PAGE_TYPE = {
 
 export const PageDisplayInfo: PageDisplayInfoListModal = {
   Home: {
-    layoutType: LAYOUT.TWO_COLUMN,
-    header: 'Property Information',
-    imageUrl: '/ThinkingOfHome.jpeg',
-    imageDescription: 'A person perusing a home'
+    layoutType: LAYOUT.SINGLE_COLUMN,
   },
   BuyingCalculator: {
     layoutType: LAYOUT.TWO_COLUMN,

@@ -3,6 +3,7 @@ import { Nav } from "../../Nav"
 import { LayoutType, PageType } from "../../../types/layout"
 import { LAYOUT, PageDisplayInfo } from "../../../common/constants"
 import { TwoColumnLayoutWithImage, TwoColumnProps } from "./TwoColumnLayout"
+import { SingleColumnLayout } from "./SingleColumnLayout"
 
 type OwnProps = {
   pageType: PageType
@@ -14,9 +15,8 @@ const getLayoutComponent = (layoutType: LayoutType) => {
   switch (layoutType) {
     case LAYOUT.TWO_COLUMN:
       return TwoColumnLayoutWithImage
-
     default:
-      return TwoColumnLayoutWithImage
+      return SingleColumnLayout
   }
 }
 
