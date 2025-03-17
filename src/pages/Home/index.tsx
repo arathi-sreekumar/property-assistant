@@ -1,11 +1,13 @@
 import { Layout } from "../../components/Page/Layout"
 import { PAGE_TYPE } from "../../common/constants"
+import { Hero } from "./components/Hero"
 
 export const Home = () => {
   return (
     <Layout
       pageType={PAGE_TYPE.HOME}
     >
+      <Hero />
       <p>
         Navigating the world of real estate can be both exciting and complex, whether you’re buying, selling, renting, or letting a property. Understanding the key aspects of each process can help you make informed decisions and maximize your investment.
       </p>
