@@ -1,4 +1,4 @@
-import { JSX } from "react"
+import { ReactNode } from "react"
 
 import { Page } from ".."
 import { ColumnUI } from '../Content/Content.css'
@@ -7,8 +7,8 @@ import { PageType } from "../../../types/layout"
 import { PageDisplayInfo } from "../../../common/constants"
 
 export type TwoColumnProps = {
-  header?: string | JSX.Element
-  children: string | JSX.Element | JSX.Element[]
+  header?: ReactNode
+  children: ReactNode
   pageType: PageType
 }
 

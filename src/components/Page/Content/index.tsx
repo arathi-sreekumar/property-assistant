@@ -1,8 +1,8 @@
-import { JSX } from "react"
+import { ReactNode } from "react"
 import { ContentUI } from "./Content.css"
 
 type OwnProps = {
-  children: JSX.Element | JSX.Element[] | string
+  children: ReactNode
 }
 
 type Props = React.HTMLAttributes<HTMLDivElement> & OwnProps

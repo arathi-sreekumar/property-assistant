@@ -1,5 +1,5 @@
-import { JSX } from "react"
-import { 
+import { ReactNode } from "react"
+import {
   Header1UI,
   Header2UI,
   Header3UI,
@@ -11,7 +11,7 @@ import {
 type Level = 1 | 2 | 3 | 4 | 5 | 6
 
 type Props = {
-  children: JSX.Element | string
+  children: ReactNode
   id?: string
   level?: Level
 }
