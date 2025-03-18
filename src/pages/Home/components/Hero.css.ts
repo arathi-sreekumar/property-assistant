@@ -2,9 +2,9 @@ import styled from "styled-components";
 
 export const HeroUI = styled('div')`
   background: var(--white-800);
-  // background-image: url('/property.png');
   background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('/property.png');
-  background-size: cover;
+  background-size: contain;
+  background-repeat: round;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -14,6 +14,10 @@ export const HeroUI = styled('div')`
   h1 {
     font-size: 72px;
     font-weight: bold;
+  }
+
+  @media (max-width: 900px) {
+    background-size: cover;
   }
 `
 
