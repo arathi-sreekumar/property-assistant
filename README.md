@@ -13,3 +13,9 @@ To override local mock server, please change `VITE_MSW_DISABLED` in `.env` to `y
 Following are links to additional documentation on this site:
 - [UX](/docs/UX.md)
 - [Requirements](/docs/Requirements.md])
+
+## To generate Icons
+
+Run the following after putting the desired svg file in `src/components/icons/svgs`:
+
+`npx @svgr/cli src/components/icons/svgs --out-dir src/components/icons --typescript`
