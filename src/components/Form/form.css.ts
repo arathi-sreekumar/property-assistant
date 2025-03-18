@@ -16,3 +16,10 @@ export const FormAction = styled('div')`
   width: 100%;
   gap: 10px;
 `
+
+export const FormRowUI = styled('div')`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+`
