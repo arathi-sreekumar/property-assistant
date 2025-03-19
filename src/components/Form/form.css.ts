@@ -22,4 +22,5 @@ export const FormRowUI = styled('div')`
   flex-direction: row;
   align-items: center;
   gap: 20px;
+  margin-bottom: 20px;
 `
