@@ -4,6 +4,7 @@ export const IconButtonUI = styled('button')`
   display: flex;
   padding: 0;
   border-radius: 50%;
+  width: 50px;
 
   svg {
     width: 25px;

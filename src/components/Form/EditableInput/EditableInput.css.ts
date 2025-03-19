@@ -4,6 +4,7 @@ export const EditableInputUI = styled('div')`
   display: flex;
   flex-direction: row;
   width: 200px;
+  gap: 5px;
 `
 
 export const EditableTextIconWrapper = styled('div')`
