@@ -2,6 +2,7 @@ import { Layout } from "../../components/Page/Layout";
 import { PAGE_TYPE } from "../../common/constants";
 import { HomePrice } from "./components/HomePrice";
 import { Deposit } from "./components/Deposit";
+import { StampDuty } from "./components/StampDuty";
 
 export const BuyingCalculator = () => {
   return (
@@ -11,8 +12,8 @@ export const BuyingCalculator = () => {
       <form>
         <HomePrice />
         <Deposit />
-        {/* Initial deposit (25%)	50,000
-Stamp duty	10,000
+        <StampDuty />
+        {/*
 Valuation fee	1000
 Survayors fee	600
 Legal fees	1500

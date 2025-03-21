@@ -1,4 +1,4 @@
-import { SelectUI } from "./Select.css"
+import { SelectUI, Wrapper } from "./Select.css"
 
 type OwnProps = {
   width?: string
@@ -12,8 +12,10 @@ export const Select = ({
   ...rest
 }: Props) => {
   return (
-    <SelectUI width={width} {...rest}>
-      {children}
-    </SelectUI>
+    <Wrapper>
+      <SelectUI width={width} {...rest}>
+        {children}
+      </SelectUI>
+    </Wrapper>
   )
 }

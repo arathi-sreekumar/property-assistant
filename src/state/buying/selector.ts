@@ -7,3 +7,7 @@ export const selectHomeBuyingCost = (state: RootState) => {
 export const selectDeposit = (state: RootState) => {
   return state.buy.deposit
 }
+
+export const selectStampDuty = (state: RootState) => {
+  return state.buy.stampDuty
+}

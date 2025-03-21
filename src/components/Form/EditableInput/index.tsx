@@ -18,6 +18,7 @@ type OwnProps = {
   onSave: (fieldValues: FieldState) => void
   value: number | string
   unit: UnitTypes,
+  additionalInfo?: string
   unitOptions?: Array<SelectOptionType>,
   getValueForUnitChange?: (fieldValues: FieldState) => number
 }
@@ -26,6 +27,7 @@ type Props = InputProps & OwnProps
 export const EditableInput = ({
   onSave,
   value,
+  additionalInfo = '',
   unit,
   unitOptions,
   getValueForUnitChange,
@@ -122,8 +124,8 @@ export const EditableInput = ({
           </>)
           : (
             <EditableTextIconWrapper>
-              <EditableText>
-                {valueWithUnit}
+              <EditableText onClick={startEditing}>
+                {`${valueWithUnit} ${additionalInfo}`}
               </EditableText>
               <IconButton onClick={startEditing}>
                 <PenCircle />
