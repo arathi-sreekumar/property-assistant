@@ -25,13 +25,6 @@ export const FormRowUI = styled('div')`
   margin-bottom: 20px;
 `
 
-export const NonEditableText = styled('div')`
-  height: 40px;
-  border-bottom: 1px solid var(--grey-600);
-  padding: 8px 12px;
-  flex-grow: 1;
-`
-
 export const FormFieldWrapper = styled('div')`
   display: flex;
   flex-direction: row;

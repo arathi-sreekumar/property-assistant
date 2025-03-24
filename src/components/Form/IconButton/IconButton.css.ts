@@ -16,9 +16,10 @@ export const IconButtonUI = styled('button')`
 
   &.primary {
     background-color: white;
-    color:  var(--button-primary-background);
+    color:  var(--color-default-text);
 
     &:hover, &:active {
+    color: var(--button-primary-background);
       path {
         fill: var(--button-primary-background);
       }

@@ -20,4 +20,6 @@ export type BuyingState = {
   homeCost: number,
   deposit: depositType,
   stampDuty: StampDutyType,
+  conveyancingFee: number,
+  totalCost: number,
 }
