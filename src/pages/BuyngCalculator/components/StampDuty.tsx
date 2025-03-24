@@ -3,11 +3,12 @@ import { useAppDispatch, useAppSelector } from "../../../state/hooks"
 import { Label } from "../../../components/Form/Label";
 import { selectStampDuty } from "../../../state/buying/selector";
 import { setStampDuty } from "../../../state/buying/actions";
-import { FormFieldWrapper, FormRowUI, NonEditableText } from "../../../components/Form/form.css";
+import { FormFieldWrapper, FormRowUI } from "../../../components/Form/form.css";
 import { BuyerTypes } from "../../../types/state";
 import { BuyerTypesList } from "../../../state/buying/constants";
 import { Select } from "../../../components/Form/Select";
-import { getValueWithUnit } from "../../../utils/unitPosition";
+import { StampDutyInfo } from "./StampDutyInfo";
+import { NonEditableText } from "../../../components/Form/NonEditableText";
 
 export const StampDuty = () => {
   const dispatch = useAppDispatch()
@@ -34,19 +35,16 @@ export const StampDuty = () => {
     )
   }
 
-  const valueWithUnit = getValueWithUnit('cash', stampDuty.value as string)
-
   return (
     <FormRowUI>
       <Label>
-        StampDuty:
+        Stamp Duty:
       </Label>
       <FormFieldWrapper>
-        <NonEditableText>
-          {valueWithUnit}
-        </NonEditableText>
+        <NonEditableText value={stampDuty.value} />
       </FormFieldWrapper>
       {showUnitSelection()}
+      <StampDutyInfo />
     </FormRowUI>
   )
 }
