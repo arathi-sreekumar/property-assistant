@@ -66,5 +66,10 @@ export const GlobalStyles = createGlobalStyle`
     --duration-quickly: 0.2s;
     --duration-promptly: 0.5s;
     --duration-slowly: 1s;
+
+    --tooltip-text-color: white;
+    --tooltip-background-color: black;
+    --tooltip-margin: 30px;
+    --tooltip-arrow-size: 6px;
   }
 `
