@@ -5,6 +5,7 @@ import { Deposit } from "./components/Deposit";
 import { StampDuty } from "./components/StampDuty";
 import { Conveyancing } from "./components/Conveyancing";
 import { TotalCost } from "./components/TotalCost";
+import { SurveyFee } from "./components/SurveyFee";
 
 export const BuyingCalculator = () => {
   return (
@@ -16,6 +17,7 @@ export const BuyingCalculator = () => {
         <Deposit />
         <StampDuty />
         <Conveyancing />
+        <SurveyFee />
         {/*
 Valuation fee	1000
 Survayors fee	600

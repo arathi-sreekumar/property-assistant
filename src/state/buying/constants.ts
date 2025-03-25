@@ -4,7 +4,11 @@ import { BuyerObjectType } from "../../types/state";
 export const INITIAL_HOME_COST = 120000
 export const INITIAL_DEPOSIT = 0.01 * INITIAL_HOME_COST
 export const INITIAL_CONVEYANCING_FEE = 1000
-export const INITIAL_TOTAL_COST = INITIAL_HOME_COST + INITIAL_CONVEYANCING_FEE
+export const INITIAL_SURVEY_FEE = 500
+export const INITIAL_TOTAL_COST =
+  INITIAL_HOME_COST +
+  INITIAL_CONVEYANCING_FEE +
+  INITIAL_SURVEY_FEE
 
 export const DepositUnits: SelectOptionType[] = [
   {

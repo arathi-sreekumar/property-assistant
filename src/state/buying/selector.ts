@@ -16,6 +16,10 @@ export const selectConveyancingFee = (state: RootState) => {
   return state.buy.conveyancingFee
 }
 
+export const selectSurveyFee = (state: RootState) => {
+  return state.buy.surveyFee
+}
+
 export const selectTotalCost = (state: RootState) => {
   return state.buy.totalCost
 }
