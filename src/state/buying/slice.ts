@@ -2,7 +2,13 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 import { BuyerTypes, BuyingState, depositType } from "../../types/state"
 import { getNewDepositValue } from "../../utils/calculateCosts"
 import { calculateStampDuty } from "../../utils/stampDutyCalc"
-import { INITIAL_CONVEYANCING_FEE, INITIAL_DEPOSIT, INITIAL_HOME_COST, INITIAL_TOTAL_COST } from "./constants"
+import {
+  INITIAL_CONVEYANCING_FEE,
+  INITIAL_DEPOSIT,
+  INITIAL_HOME_COST,
+  INITIAL_SURVEY_FEE,
+  INITIAL_TOTAL_COST
+} from "./constants"
 
 const initialState: BuyingState = {
   homeCost: INITIAL_HOME_COST,
@@ -15,6 +21,7 @@ const initialState: BuyingState = {
     value: calculateStampDuty(INITIAL_HOME_COST, 'firstTime'),
   },
   conveyancingFee: INITIAL_CONVEYANCING_FEE,
+  surveyFee: INITIAL_SURVEY_FEE,
   totalCost: INITIAL_TOTAL_COST + calculateStampDuty(INITIAL_HOME_COST, 'firstTime')
 }
 
@@ -54,13 +61,20 @@ export const BuyingSlice = createSlice({
     ) => {
       state.conveyancingFee = action.payload
     },
+    setSurveyFee: (
+      state: BuyingState,
+      action: PayloadAction<number>
+    ) => {
+      state.surveyFee = action.payload
+    },
     setTotalCost: (
       state: BuyingState
     ) => {
       state.totalCost =
         (state.homeCost as number) +
         (state.conveyancingFee as number) +
-        (state.stampDuty.value as number)
+        (state.stampDuty.value as number) +
+        (state.surveyFee as number)
     }
   },
 })
