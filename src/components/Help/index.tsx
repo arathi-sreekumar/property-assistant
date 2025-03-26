@@ -22,7 +22,7 @@ export const Help = ({ title, children }: HelpProps) => {
 
   return (
     <>
-      <IconButton onClick={handleShowModal}><HelpCircle /></IconButton>
+      <IconButton onClick={handleShowModal} title="More information"><HelpCircle /></IconButton>
       <Modal
         isOpen={isOpen}
         onClose={onClose}
