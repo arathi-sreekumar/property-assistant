@@ -27,7 +27,7 @@ const initialState: BuyingState = {
 
 export const BuyingSlice = createSlice({
   name: 'buy',
-  initialState,
+  initialState: { ...initialState },
   reducers: {
     setHomeCost: (
       state: BuyingState,
@@ -75,6 +75,7 @@ export const BuyingSlice = createSlice({
         (state.conveyancingFee as number) +
         (state.stampDuty.value as number) +
         (state.surveyFee as number)
-    }
+    },
+    reset: () => initialState,
   },
 })

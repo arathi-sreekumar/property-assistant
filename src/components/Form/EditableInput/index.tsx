@@ -49,7 +49,7 @@ export const EditableInput = ({
   }
 
   const onInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setInputValue(event.target.valueAsNumber)
+    setInputValue(event.target.value)
   }
 
   const save = () => {
@@ -87,14 +87,19 @@ export const EditableInput = ({
     if (unitOptions) {
       const options = unitOptions.map(option => (
         <option
+          key={`option-${option.optionValue}`}
           value={option.optionValue}
-          selected={option.optionValue === unitValue}
         >
           {option.displayValue}
         </option>
       ))
       return (
-        <Select onChange={handleUnitChange} width='50px'>
+        <Select
+          name="unit"
+          aria-label="unit"
+          onChange={handleUnitChange}
+          value={unitValue}
+        >
           {options}
         </Select>
       )
@@ -118,7 +123,7 @@ export const EditableInput = ({
               onKeyDown={keyDownHandler}
               {...rest}
             />
-            <IconButton onClick={save}>
+            <IconButton onClick={save} title="Save">
               <CheckCircle />
             </IconButton>
           </>)
@@ -127,7 +132,7 @@ export const EditableInput = ({
               <EditableText onClick={startEditing}>
                 {`${valueWithUnit} ${additionalInfo}`}
               </EditableText>
-              <IconButton onClick={startEditing}>
+              <IconButton onClick={startEditing} title="Edit">
                 <PenCircle />
               </IconButton>
             </EditableTextIconWrapper>

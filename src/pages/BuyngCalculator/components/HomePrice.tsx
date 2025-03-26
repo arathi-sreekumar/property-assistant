@@ -11,7 +11,7 @@ export const HomePrice = () => {
   const homeCost = useAppSelector(selectHomeBuyingCost)
 
   const priceChangeHandler = (fieldValue: FieldState) => {
-    dispatch(setHomeCost(fieldValue.value as number))
+    dispatch(setHomeCost(Number(fieldValue.value)))
   }
 
   return (

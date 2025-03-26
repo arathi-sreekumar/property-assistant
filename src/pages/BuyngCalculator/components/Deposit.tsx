@@ -29,12 +29,10 @@ export const Deposit = () => {
   }
 
   const getValueForUnitChange = (fieldValue: FieldState) => {
-    console.log('fieldValue: unit', fieldValue.unit)
     switch (fieldValue.unit) {
       case 'cash':
         return ((fieldValue.value as number) / 100) * homeCost
       default:
-        console.log('fieldValue.value: ', fieldValue.value, (fieldValue.value as number) / homeCost)
         return ((fieldValue.value as number) / homeCost) * 100
     }
   }
@@ -45,7 +43,7 @@ export const Deposit = () => {
 
   return (
     <FormRowUI>
-      <Label>
+      <Label htmlFor="deposit">
         Deposit:
       </Label>
       <EditableInput
@@ -57,6 +55,7 @@ export const Deposit = () => {
         unit={deposit.unit}
         unitOptions={DepositUnits}
         getValueForUnitChange={getValueForUnitChange}
+        id="deposit"
       />
     </FormRowUI>
   )

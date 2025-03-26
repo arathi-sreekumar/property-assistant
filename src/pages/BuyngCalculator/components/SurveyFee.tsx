@@ -13,7 +13,7 @@ export const SurveyFee = () => {
   const surveyFee = useAppSelector(selectSurveyFee)
 
   const feeChangeHandler = (fieldValue: FieldState) => {
-    dispatch(setSurveyFee(fieldValue.value as number))
+    dispatch(setSurveyFee(Number(fieldValue.value)))
   }
 
   return (

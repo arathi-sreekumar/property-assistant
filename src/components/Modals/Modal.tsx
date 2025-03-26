@@ -51,7 +51,7 @@ const Modal = ({ children, isOpen, onClose, title }: Props) => {
               >
                 <Header>
                   {title}
-                  <Close onClick={() => onClose()}>
+                  <Close onClick={() => onClose()} title="Close">
                     x
                   </Close>
                 </Header>

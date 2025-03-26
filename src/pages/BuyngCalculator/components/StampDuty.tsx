@@ -23,13 +23,19 @@ export const StampDuty = () => {
     const options = BuyerTypesList.map(option => (
       <option
         value={option.optionValue}
-        selected={option.optionValue === stampDuty.buyerType}
+        key={`option-${option.optionValue}`}
       >
         {option.displayValue}
       </option>
     ))
     return (
-      <Select onChange={buyerTypeChangeHandler} width='180px'>
+      <Select
+        onChange={buyerTypeChangeHandler}
+        width='180px'
+        value={stampDuty.buyerType}
+        name="buyerType"
+        aria-label="buyerType"
+      >
         {options}
       </Select>
     )

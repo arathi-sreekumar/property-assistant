@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
     align-items: center;
-    background-color: rgba(var(--hsds-token-color-charcoal-800-rgb), 0.72);
+    background-color: rgba(var(--grey-600), 0.72);
     inset: 0px;
     display: flex
 ;
@@ -52,11 +52,12 @@ export const Content = styled.div`
   }
 `
 
-export const Close = styled.div`
+export const Close = styled.button`
   border: none;
   border-radius: 3px;
   margin-left: 0.5rem;
   background: none;
+  color: var(--color-text-default);
   position: absolute;
   right: 20px;
   top: 10px;

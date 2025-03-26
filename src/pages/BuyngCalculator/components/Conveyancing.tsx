@@ -13,12 +13,12 @@ export const Conveyancing = () => {
   const conveyancingFee = useAppSelector(selectConveyancingFee)
 
   const feeChangeHandler = (fieldValue: FieldState) => {
-    dispatch(setConveyancingFee(fieldValue.value as number))
+    dispatch(setConveyancingFee(Number(fieldValue.value)))
   }
 
   return (
     <FormRowUI>
-      <Label>
+      <Label htmlFor="conveyancingFee">
         Conveyancing Fee:
       </Label>
       <EditableInput
@@ -26,6 +26,7 @@ export const Conveyancing = () => {
         value={conveyancingFee}
         onSave={feeChangeHandler}
         unit='cash'
+        id="conveyancingFee"
       />
       <ConveyancingInfo />
     </FormRowUI>
