@@ -50,3 +50,9 @@ export const FormFieldWrapper = styled('div')`
     width: calc(100% - 40px);
   }
 `
+
+export const ErrorUI = styled('div')`
+  color: var(--error);
+  margin-top: -10px;
+  margin-bottom: 20px;
+`

@@ -20,5 +20,8 @@ export const palette = {
   yellow: {
     300: '#FFE85C',
     600: '#FCD733',
+  },
+  red: {
+    600: '#FF0000',
   }
 }

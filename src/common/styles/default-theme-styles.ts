@@ -48,6 +48,7 @@ export const ThemeStyles = createGlobalStyle`
     --chat-button-bg: ${palette.green[600]};
     --chat-button-color: ${palette.white[800]};
 
-    --app-background: ${palette.white[600]}
+    --app-background: ${palette.white[600]};
+    --error: ${palette.red[600]};
   }
 `
