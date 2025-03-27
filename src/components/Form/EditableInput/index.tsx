@@ -108,7 +108,7 @@ export const EditableInput = ({
     return null
   }
 
-  const valueWithUnit = getValueWithUnit(unitValue, inputValue as string)
+  const valueWithUnit = getValueWithUnit(inputValue as string, unitValue)
 
   return (
     <EditableInputUI>

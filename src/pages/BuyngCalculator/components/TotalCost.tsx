@@ -1,4 +1,4 @@
-import { use, useEffect } from "react";
+import { useEffect } from "react";
 
 import { useAppDispatch, useAppSelector } from "../../../state/hooks"
 
@@ -10,7 +10,8 @@ import {
   selectConveyancingFee,
   selectStampDuty,
   selectTotalCost,
-  selectSurveyFee
+  selectSurveyFee,
+  selectValuationFee,
 } from "../../../state/buying/selector";
 import { setTotalCost } from "../../../state/buying/actions";
 
@@ -22,14 +23,21 @@ export const TotalCost = () => {
   const stampDuty = useAppSelector(selectStampDuty)
   const conveyancingFee = useAppSelector(selectConveyancingFee)
   const surveyFee = useAppSelector(selectSurveyFee)
+  const valuationFee = useAppSelector(selectValuationFee)
 
   useEffect(() => {
     dispatch(setTotalCost())
-  }, [conveyancingFee, homeCost, stampDuty, surveyFee])
+  }, [
+    conveyancingFee,
+    homeCost,
+    stampDuty,
+    surveyFee,
+    valuationFee,
+  ])
 
   return (
     <FormRowUI>
-      <Label>Total cost</Label>
+      <Label>Total cost:</Label>
       <FormFieldWrapper>
         <NonEditableText classes="total" value={totalCost} />
       </FormFieldWrapper>

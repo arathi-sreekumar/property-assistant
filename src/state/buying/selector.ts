@@ -20,6 +20,10 @@ export const selectSurveyFee = (state: RootState) => {
   return state.buy.surveyFee
 }
 
+export const selectValuationFee = (state: RootState) => {
+  return state.buy.valuationFee
+}
+
 export const selectTotalCost = (state: RootState) => {
   return state.buy.totalCost
 }

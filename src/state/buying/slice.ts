@@ -7,7 +7,8 @@ import {
   INITIAL_DEPOSIT,
   INITIAL_HOME_COST,
   INITIAL_SURVEY_FEE,
-  INITIAL_TOTAL_COST
+  INITIAL_TOTAL_COST,
+  INITIAL_VALUATION_FEE
 } from "./constants"
 
 const initialState: BuyingState = {
@@ -22,6 +23,7 @@ const initialState: BuyingState = {
   },
   conveyancingFee: INITIAL_CONVEYANCING_FEE,
   surveyFee: INITIAL_SURVEY_FEE,
+  valuationFee: INITIAL_VALUATION_FEE,
   totalCost: INITIAL_TOTAL_COST + calculateStampDuty(INITIAL_HOME_COST, 'firstTime')
 }
 
@@ -67,6 +69,12 @@ export const BuyingSlice = createSlice({
     ) => {
       state.surveyFee = action.payload
     },
+    setValuationFee: (
+      state: BuyingState,
+      action: PayloadAction<number>
+    ) => {
+      state.valuationFee = action.payload
+    },
     setTotalCost: (
       state: BuyingState
     ) => {
@@ -74,7 +82,8 @@ export const BuyingSlice = createSlice({
         (state.homeCost as number) +
         (state.conveyancingFee as number) +
         (state.stampDuty.value as number) +
-        (state.surveyFee as number)
+        (state.surveyFee as number) +
+        (state.valuationFee as number)
     },
     reset: () => initialState,
   },

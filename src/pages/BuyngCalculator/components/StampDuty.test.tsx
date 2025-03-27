@@ -1,7 +1,7 @@
 import { BrowserRouter } from 'react-router-dom'
 
 import { renderWithProvider } from '../../../test/helpers'
-import { screen, fireEvent, waitFor } from '@testing-library/react'
+import { act, screen, fireEvent, waitFor } from '@testing-library/react'
 
 import { StampDuty } from './StampDuty'
 import { setHomeCost } from '../../../state/buying/actions'
@@ -14,7 +14,10 @@ describe('StampDuty', () => {
 
   it('shows 1000 as stamp duty for first time buyer with home cost 320000', async () => {
     const { store } = renderWithProvider(<StampDuty />)
-    store.dispatch(setHomeCost(320000))
+
+    act(() => {
+      store.dispatch(setHomeCost(320000))
+    })
 
     await waitFor(() => {
       expect(screen.getByText('£ 1000')).toBeInTheDocument()
@@ -23,7 +26,9 @@ describe('StampDuty', () => {
 
   it('shows 6000 as stamp duty for single home buyer with home cost 320000', async () => {
     const { store } = renderWithProvider(<StampDuty />)
-    store.dispatch(setHomeCost(320000))
+    act(() => {
+      store.dispatch(setHomeCost(320000))
+    })
 
     await waitFor(() => {
       expect(screen.getByText('£ 1000')).toBeInTheDocument()
@@ -39,7 +44,10 @@ describe('StampDuty', () => {
 
   it('shows 22000 as stamp duty for second home buyer with home cost 320000', async () => {
     const { store } = renderWithProvider(<StampDuty />)
-    store.dispatch(setHomeCost(320000))
+
+    act(() => {
+      store.dispatch(setHomeCost(320000))
+    })
 
     await waitFor(() => {
       expect(screen.getByText('£ 1000')).toBeInTheDocument()
@@ -55,7 +63,10 @@ describe('StampDuty', () => {
 
   it('shows 22000 as stamp duty for buy to let buyer with home cost 320000', async () => {
     const { store } = renderWithProvider(<StampDuty />)
-    store.dispatch(setHomeCost(320000))
+
+    act(() => {
+      store.dispatch(setHomeCost(320000))
+    })
 
     await waitFor(() => {
       expect(screen.getByText('£ 1000')).toBeInTheDocument()
