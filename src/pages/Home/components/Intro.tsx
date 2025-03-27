@@ -13,12 +13,14 @@ export const Intro = () => {
           Understanding the key aspects of each process can help you make informed decisions and maximize your investment.
         </p>
       </ColumnUI>
-      <ColumnUI>
-        <ImageUI
-          src='/property-assistant/property_calc.jpg'
-          alt='Image representing calculations involved in a property transaction'
-        />
-      </ColumnUI>
+      {window.innerWidth > 640 && (
+        <ColumnUI>
+          <ImageUI
+            src='/property-assistant/property_calc.jpg'
+            alt='Image representing calculations involved in a property transaction'
+          />
+        </ColumnUI>
+      )}
     </IntroWrapper>
   )
 }

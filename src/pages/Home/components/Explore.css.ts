@@ -7,6 +7,11 @@ export const ExploreWrapper = styled('div')`
   align-items: center;
   font-size: 20px;
   margin-bottom: 40px;
+
+  @media (max-width: 640px) {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
 `
 
 export const ExploreUI = styled('div')`

@@ -5,6 +5,10 @@ export const EditableInputUI = styled('div')`
   flex-direction: row;
   width: 180px;
   gap: 5px;
+
+  @media (max-width: 480px) {
+    width: calc(100% - 40px);
+  }
 `
 
 export const EditableTextIconWrapper = styled('div')`

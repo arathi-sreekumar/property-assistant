@@ -23,10 +23,21 @@ export const FormRowUI = styled('div')`
   align-items: center;
   gap: 20px;
   margin-bottom: 20px;
+  max-width: 100%;
+  flex-wrap: wrap;
 
   label {
     width: 150px;
+
+    @media (max-width: 480px) {
+      width: 100%;
+      margin-top: 20px;
+    }
   }
+
+   @media (max-width: 480px) {
+    gap: 5px;
+   }
 `
 
 export const FormFieldWrapper = styled('div')`
@@ -34,4 +45,8 @@ export const FormFieldWrapper = styled('div')`
   flex-direction: row;
   width: 180px;
   gap: 5px;
+
+  @media (max-width: 480px) {
+    width: calc(100% - 40px);
+  }
 `

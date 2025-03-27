@@ -7,6 +7,10 @@ export const NonEditableTextUI = styled('div')`
   width: 180px;
   flex-grow: 1;
 
+  @media (max-width: 480px) {
+    width: 100%;
+  }
+
   &.total {
     font-weight: bold;
     background-color: var(--yellow-300);

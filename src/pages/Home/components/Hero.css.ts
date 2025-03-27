@@ -19,6 +19,11 @@ export const HeroUI = styled('div')`
   @media (max-width: 900px) {
     background-size: cover;
   }
+
+  @media (max-width: 600px) {
+    height: auto;
+    background: none;
+  }
 `
 
 export const CaptionUI = styled('p')`
