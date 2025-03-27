@@ -11,13 +11,13 @@ export const Explore = () => {
       <ExploreWrapper>
         <ColumnUI>
           <ImageUI
-            src='/for_sale.jpg'
+            src='/property-assistant/for_sale.jpg'
             alt='Image representing calculations involved in a property transaction'
           />
         </ColumnUI>
         <ColumnUI>
           <ImageUI
-            src='/to_let.jpg'
+            src='/property-assistant/to_let.jpg'
             alt='Image representing calculations involved in a property transaction'
           />
         </ColumnUI>
