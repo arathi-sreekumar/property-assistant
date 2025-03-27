@@ -9,6 +9,11 @@ export const ContentUI = styled('section')`
     display: grid;
     grid-template-columns: 2fr 1fr;
     gap: 50px;
+
+    @media (max-width: 640px) {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
   }
 
   li {

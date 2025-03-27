@@ -17,7 +17,7 @@ export const PageDisplayInfo: PageDisplayInfoListModal = {
     layoutType: LAYOUT.SINGLE_COLUMN,
   },
   BuyingCalculator: {
-    layoutType: LAYOUT.TWO_COLUMN,
+    layoutType: window.innerWidth > 980 ? LAYOUT.TWO_COLUMN : LAYOUT.SINGLE_COLUMN,
     header: 'Home Buying Costs Calculator',
   },
 }

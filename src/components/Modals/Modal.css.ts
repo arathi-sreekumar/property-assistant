@@ -29,6 +29,10 @@ export const ModalContainer = styled.div`
 	border-radius: 8px;
   padding: 40px;
   max-width: 680px;
+
+  @media (max-width: 720px) {
+    margin: 20px;
+  }
 `;
 
 export const Header = styled.h1`

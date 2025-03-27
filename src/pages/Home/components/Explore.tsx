@@ -15,12 +15,14 @@ export const Explore = () => {
             alt='Image representing calculations involved in a property transaction'
           />
         </ColumnUI>
-        <ColumnUI>
-          <ImageUI
-            src='/property-assistant/to_let.jpg'
-            alt='Image representing calculations involved in a property transaction'
-          />
-        </ColumnUI>
+        {window.innerWidth > 640 && (
+          <ColumnUI>
+            <ImageUI
+              src='/property-assistant/to_let.jpg'
+              alt='Image representing calculations involved in a property transaction'
+            />
+          </ColumnUI>
+        )}
         <ColumnUI>
           <Header level={2}>Selling</Header>
           <p>

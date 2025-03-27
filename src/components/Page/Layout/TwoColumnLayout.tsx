@@ -34,12 +34,14 @@ export const TwoColumnLayoutWithImage = ({
         <ColumnUI>
           {children}
         </ColumnUI>
-        <ColumnUI role={role}>
-          <ImageUI
-            src={imageUrl}
-            alt={imageDescription}
-          />
-        </ColumnUI>
+        {window.innerWidth > 640 && (
+          <ColumnUI role={role}>
+            <ImageUI
+              src={imageUrl}
+              alt={imageDescription}
+            />
+          </ColumnUI>
+        )}
       </Page.Content>
     </Page>
   )
