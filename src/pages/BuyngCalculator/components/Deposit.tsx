@@ -1,32 +1,36 @@
-import { useAppDispatch, useAppSelector } from "../../../state/hooks"
+import { useState } from "react";
 
+import { useAppDispatch, useAppSelector } from "../../../state/hooks"
 import { Label } from "../../../components/Form/Label";
 import { selectDeposit, selectHomeBuyingCost } from "../../../state/buying/selector";
 import { EditableInput, FieldState } from "../../../components/Form/EditableInput";
-import { FormRowUI } from "../../../components/Form/form.css";
+import { ErrorUI, FormRowUI } from "../../../components/Form/form.css";
 import { DepositUnits } from "../../../state/buying/constants";
 import { setDeposit } from "../../../state/buying/actions";
+import { getValueWithUnit } from "../../../utils/unitPosition";
+import { UnitTypes } from "../../../types/state";
+
+const getMax = (unit: UnitTypes, homeCost: number) => {
+  if (unit === 'cash') {
+    return homeCost
+  } else {
+    return 100
+  }
+}
+
+const getMin = (unit: UnitTypes, homeCost: number) => {
+  if (unit === 'cash') {
+    return (homeCost * .05)
+  } else {
+    return 5
+  }
+}
 
 export const Deposit = () => {
   const dispatch = useAppDispatch()
   const deposit = useAppSelector(selectDeposit)
   const homeCost = useAppSelector(selectHomeBuyingCost)
-
-  const getMax = () => {
-    if (deposit.unit === 'cash') {
-      return homeCost
-    } else {
-      return 100
-    }
-  }
-
-  const getMin = () => {
-    if (deposit.unit === 'cash') {
-      return (homeCost * .05)
-    } else {
-      return 5
-    }
-  }
+  const [error, setError] = useState('')
 
   const getValueForUnitChange = (fieldValue: FieldState) => {
     switch (fieldValue.unit) {
@@ -37,26 +41,46 @@ export const Deposit = () => {
     }
   }
 
+  const validateDeposit = (fieldValue: FieldState) => {
+    const minValue = getMin(fieldValue.unit, homeCost)
+    const maxValue = getMax(fieldValue.unit, homeCost)
+
+    if (fieldValue.value < minValue) {
+      setError(`Deposit cannot be less than ${getValueWithUnit(minValue, fieldValue.unit)}`)
+      return false
+    } else if (fieldValue.value > maxValue) {
+      setError(`Deposit cannot be greater than ${getValueWithUnit(maxValue, fieldValue.unit)}`)
+      return false
+    }
+
+    setError('')
+    return true
+  }
+
   const depositChangeHandler = (fieldValue: FieldState) => {
-    dispatch(setDeposit(fieldValue))
+    const isValid = validateDeposit(fieldValue)
+    if (isValid) {
+      dispatch(setDeposit(fieldValue))
+    }
   }
 
   return (
-    <FormRowUI>
-      <Label htmlFor="deposit">
-        Deposit:
-      </Label>
-      <EditableInput
-        type='number'
-        max={getMax()}
-        min={getMin()}
-        value={deposit.value}
-        onSave={depositChangeHandler}
-        unit={deposit.unit}
-        unitOptions={DepositUnits}
-        getValueForUnitChange={getValueForUnitChange}
-        id="deposit"
-      />
-    </FormRowUI>
+    <>
+      <FormRowUI>
+        <Label htmlFor="deposit">
+          Deposit:
+        </Label>
+        <EditableInput
+          type='number'
+          value={deposit.value}
+          onSave={depositChangeHandler}
+          unit={deposit.unit}
+          unitOptions={DepositUnits}
+          getValueForUnitChange={getValueForUnitChange}
+          id="deposit"
+        />
+      </FormRowUI>
+      {error && (<ErrorUI>{error}</ErrorUI>)}
+    </>
   )
 }
