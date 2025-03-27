@@ -20,7 +20,7 @@ export const getUnit = (type: string): UnitType => {
   }
 }
 
-export const getValueWithUnit = (unit: UnitTypes, value: string) => {
+export const getValueWithUnit = (value: string, unit: UnitTypes = 'cash') => {
   const unitConfig = getUnit(unit)
   if (unitConfig.position === 'postfix') {
     return `${value} ${unitConfig.value}`

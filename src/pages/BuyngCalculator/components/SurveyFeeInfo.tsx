@@ -5,7 +5,7 @@ export const SurveyFeeInfo: React.FC = () => {
   return (
     <Help title="Survey Fees">
       <p>
-        The cost of the survey depends on what type of survey you choose. See our guide on <Link to="https://hoa.org.uk/advice/guides-for-homeowners/i-am-buying/how-much-does-a-house-survey-cost/">how much a survey costs</Link> for more details.
+        The cost of the survey depends on what type of survey you choose. See this guide on <Link to="https://hoa.org.uk/advice/guides-for-homeowners/i-am-buying/how-much-does-a-house-survey-cost/">how much a survey costs</Link> for more details.
       </p>
       <p><strong>RICS Level 1 Home Survey (Typical costs: £300-£900)</strong></p>
       <ul>

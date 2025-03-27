@@ -12,11 +12,11 @@ type Props = OwnProps & React.HTMLAttributes<HTMLDivElement>
 
 export const NonEditableText = ({
   value,
-  unit = 'cash',
+  unit,
   classes = ''
 }: Props) => {
 
-  const valueWithUnit = getValueWithUnit(unit, value as string)
+  const valueWithUnit = getValueWithUnit(value as string, unit)
 
   return (
     <NonEditableTextUI className={classes}>

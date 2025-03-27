@@ -6,6 +6,7 @@ export const {
   setStampDuty,
   setConveyancingFee,
   setSurveyFee,
+  setValuationFee,
   setTotalCost,
   reset,
 } = BuyingSlice.actions
