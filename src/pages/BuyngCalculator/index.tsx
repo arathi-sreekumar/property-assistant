@@ -7,6 +7,7 @@ import { Conveyancing } from "./components/Conveyancing";
 import { TotalCost } from "./components/TotalCost";
 import { SurveyFee } from "./components/SurveyFee";
 import { ValuationFee } from "./components/ValuationFee";
+import { YourCost } from "./components/YourCost";
 
 export const BuyingCalculator = () => {
   return (
@@ -28,6 +29,7 @@ Mortgage fees	1000
 Total fees to pay	64,270 */
         }
         <TotalCost />
+        <YourCost />
       </form>
     </Layout>
   )

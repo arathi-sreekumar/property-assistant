@@ -5,14 +5,14 @@ import user from '@testing-library/user-event';
 
 describe('<EditableInput> component', () => {
   it('displays an editable input component initially with a text value', () => {
-    render(<EditableInput onSave={() => { }} value="100" unit="cash" />)
+    render(<EditableInput onSave={() => { }} value={100} unit="cash" />)
 
     expect(screen.getByText('£ 100')).toBeInTheDocument()
     expect(screen.getByRole('button', { name: /Edit/i })).toBeInTheDocument()
   })
 
   it('shows as editable field on click of edit icon button', () => {
-    render(<EditableInput onSave={() => { }} value="100" unit="cash" />)
+    render(<EditableInput onSave={() => { }} value={100} unit="cash" />)
 
     const editButton = screen.getByRole('button', { name: /Edit/i })
 
@@ -27,7 +27,7 @@ describe('<EditableInput> component', () => {
   })
 
   it('shows as editable field on click of text', () => {
-    render(<EditableInput onSave={() => { }} value="100" unit="cash" />)
+    render(<EditableInput onSave={() => { }} value={100} unit="cash" />)
 
     const textDisplay = screen.getByText('£ 100')
     expect(textDisplay).toBeInTheDocument()
@@ -41,7 +41,7 @@ describe('<EditableInput> component', () => {
   })
 
   it('should be able to edit and see the changes', async () => {
-    render(<EditableInput onSave={() => { }} value="100" unit="cash" />)
+    render(<EditableInput onSave={() => { }} value={100} unit="cash" />)
 
     const editButton = screen.getByRole('button', { name: /Edit/i })
 
@@ -58,7 +58,7 @@ describe('<EditableInput> component', () => {
 
   it('should be able to save the changes on clicking save icon', () => {
     const onSave = jest.fn()
-    render(<EditableInput onSave={onSave} value="100" unit="cash" />)
+    render(<EditableInput onSave={onSave} value={100} unit="cash" />)
 
     const editButton = screen.getByRole('button', { name: /Edit/i })
 
@@ -74,13 +74,13 @@ describe('<EditableInput> component', () => {
 
     fireEvent.click(saveButton)
 
-    expect(onSave).toHaveBeenCalledWith({ unit: 'cash', value: '200' })
+    expect(onSave).toHaveBeenCalledWith({ unit: 'cash', value: 200 })
     expect(screen.getByText('£ 200')).toBeInTheDocument()
   })
 
   it('should be able to save the changes on enter keypress', async () => {
     const onSave = jest.fn()
-    render(<EditableInput onSave={onSave} value="100" unit="cash" />)
+    render(<EditableInput onSave={onSave} value={100} unit="cash" />)
 
     const editButton = screen.getByRole('button', { name: /Edit/i })
 
@@ -95,7 +95,7 @@ describe('<EditableInput> component', () => {
     user.type(editInput, '{enter}')
 
     await waitFor(() => {
-      expect(onSave).toHaveBeenCalledWith({ unit: 'cash', value: '200' })
+      expect(onSave).toHaveBeenCalledWith({ unit: 'cash', value: 200 })
       expect(screen.getByText('£ 200')).toBeInTheDocument()
     })
   })
@@ -106,7 +106,7 @@ describe('<EditableInput> component', () => {
     render(
       <EditableInput
         onSave={onSave}
-        value="100"
+        value={100}
         unit="cash"
         unitOptions={[
           { optionValue: 'cash', displayValue: '£' },

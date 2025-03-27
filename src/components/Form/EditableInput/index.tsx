@@ -12,11 +12,11 @@ type InputProps = React.InputHTMLAttributes<HTMLInputElement>
 
 export type FieldState = {
   unit: UnitTypes
-  value: string | number
+  value: number
 }
 type OwnProps = {
   onSave: (fieldValues: FieldState) => void
-  value: number | string
+  value: number
   unit: UnitTypes,
   additionalInfo?: string
   unitOptions?: Array<SelectOptionType>,
@@ -34,7 +34,7 @@ export const EditableInput = ({
   ...rest
 }: Props) => {
   const [isEditing, setIsEditing] = useState(false)
-  const [inputValue, setInputValue] = useState(value)
+  const [inputValue, setInputValue] = useState<number>(value)
   const [unitValue, setUnitValue] = useState(unit)
 
   useEffect(() => {
@@ -49,13 +49,13 @@ export const EditableInput = ({
   }
 
   const onInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setInputValue(event.target.value)
+    setInputValue(Number(event.target.value))
   }
 
   const save = () => {
     const fieldValues = {
       unit: unitValue,
-      value: inputValue
+      value: Number(inputValue)
     }
     onSave(fieldValues)
     setIsEditing(false)
@@ -108,7 +108,7 @@ export const EditableInput = ({
     return null
   }
 
-  const valueWithUnit = getValueWithUnit(inputValue as string, unitValue)
+  const valueWithUnit = getValueWithUnit(inputValue, unitValue)
 
   return (
     <EditableInputUI>

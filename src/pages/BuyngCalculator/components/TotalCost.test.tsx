@@ -7,8 +7,8 @@ import { setConveyancingFee, setHomeCost, setStampDuty, setSurveyFee, setValuati
 describe('Total Cost', () => {
   it('renders Total Cost component', () => {
     renderWithProvider(<TotalCost />)
-    expect(screen.getByText('Total cost:')).toBeInTheDocument()
-    expect(screen.getByText('£ 121800')).toBeInTheDocument()
+    expect(screen.getByText('Total cost to buy:')).toBeInTheDocument()
+    expect(screen.getByText('£ 121,800')).toBeInTheDocument()
   })
 
   it('updates total cost when homeCost changes', async () => {
@@ -19,7 +19,7 @@ describe('Total Cost', () => {
     })
 
     await waitFor(() => {
-      expect(screen.getByText('£ 322800')).toBeInTheDocument()
+      expect(screen.getByText('£ 322,800')).toBeInTheDocument()
     })
   })
 
@@ -31,7 +31,7 @@ describe('Total Cost', () => {
     })
 
     await waitFor(() => {
-      expect(screen.getByText('£ 122300')).toBeInTheDocument()
+      expect(screen.getByText('£ 122,300')).toBeInTheDocument()
     })
   })
 
@@ -43,7 +43,7 @@ describe('Total Cost', () => {
     })
 
     await waitFor(() => {
-      expect(screen.getByText('£ 127800')).toBeInTheDocument()
+      expect(screen.getByText('£ 127,800')).toBeInTheDocument()
     })
   })
 
@@ -55,7 +55,7 @@ describe('Total Cost', () => {
     })
 
     await waitFor(() => {
-      expect(screen.getByText('£ 122000')).toBeInTheDocument()
+      expect(screen.getByText('£ 122,000')).toBeInTheDocument()
     })
   })
 
@@ -67,7 +67,7 @@ describe('Total Cost', () => {
     })
 
     await waitFor(() => {
-      expect(screen.getByText('£ 121700')).toBeInTheDocument()
+      expect(screen.getByText('£ 121,700')).toBeInTheDocument()
     })
   })
 })

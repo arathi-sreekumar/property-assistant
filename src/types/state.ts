@@ -2,7 +2,7 @@ export type UnitTypes = 'cash' | 'percentage'
 
 export type depositType = {
   unit: UnitTypes,
-  value: number | string,
+  value: number,
 }
 
 export type BuyerTypes = 'firstTime' | 'singleHome' | 'secondHome' | 'buyToLet'
@@ -13,7 +13,7 @@ export type BuyerObjectType = {
 
 export type StampDutyType = {
   buyerType: BuyerTypes
-  value: number | string
+  value: number
 }
 
 export type BuyingState = {
@@ -24,4 +24,5 @@ export type BuyingState = {
   surveyFee: number,
   valuationFee: number,
   totalCost: number,
+  yourCost: number,
 }

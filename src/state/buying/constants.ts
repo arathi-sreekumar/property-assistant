@@ -12,6 +12,12 @@ export const INITIAL_TOTAL_COST =
   INITIAL_SURVEY_FEE +
   INITIAL_VALUATION_FEE
 
+export const INITIAL_OWN_COST =
+  INITIAL_DEPOSIT +
+  INITIAL_CONVEYANCING_FEE +
+  INITIAL_SURVEY_FEE +
+  INITIAL_VALUATION_FEE
+
 export const DepositUnits: SelectOptionType[] = [
   {
     optionValue: 'cash',

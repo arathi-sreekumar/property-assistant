@@ -1,15 +1,18 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 import { BuyerTypes, BuyingState, depositType } from "../../types/state"
-import { getNewDepositValue } from "../../utils/calculateCosts"
+import { getDepositValue, getNewDepositValue } from "../../utils/calculateCosts"
 import { calculateStampDuty } from "../../utils/stampDutyCalc"
 import {
   INITIAL_CONVEYANCING_FEE,
   INITIAL_DEPOSIT,
   INITIAL_HOME_COST,
+  INITIAL_OWN_COST,
   INITIAL_SURVEY_FEE,
   INITIAL_TOTAL_COST,
   INITIAL_VALUATION_FEE
 } from "./constants"
+
+const INITIAL_STAMPDUTY = calculateStampDuty(INITIAL_HOME_COST, 'firstTime')
 
 const initialState: BuyingState = {
   homeCost: INITIAL_HOME_COST,
@@ -19,12 +22,13 @@ const initialState: BuyingState = {
   },
   stampDuty: {
     buyerType: 'firstTime',
-    value: calculateStampDuty(INITIAL_HOME_COST, 'firstTime'),
+    value: INITIAL_STAMPDUTY,
   },
   conveyancingFee: INITIAL_CONVEYANCING_FEE,
   surveyFee: INITIAL_SURVEY_FEE,
   valuationFee: INITIAL_VALUATION_FEE,
-  totalCost: INITIAL_TOTAL_COST + calculateStampDuty(INITIAL_HOME_COST, 'firstTime')
+  totalCost: INITIAL_TOTAL_COST + INITIAL_STAMPDUTY,
+  yourCost: INITIAL_OWN_COST + INITIAL_STAMPDUTY,
 }
 
 export const BuyingSlice = createSlice({
@@ -79,11 +83,22 @@ export const BuyingSlice = createSlice({
       state: BuyingState
     ) => {
       state.totalCost =
-        (state.homeCost as number) +
-        (state.conveyancingFee as number) +
-        (state.stampDuty.value as number) +
-        (state.surveyFee as number) +
-        (state.valuationFee as number)
+        state.homeCost +
+        state.conveyancingFee +
+        state.stampDuty.value +
+        state.surveyFee +
+        state.valuationFee
+    },
+    setYourCost: (
+      state: BuyingState
+    ) => {
+      const deposit = getDepositValue(state.deposit, state.homeCost)
+      state.yourCost =
+        deposit +
+        state.conveyancingFee +
+        state.stampDuty.value +
+        state.surveyFee +
+        state.valuationFee
     },
     reset: () => initialState,
   },
