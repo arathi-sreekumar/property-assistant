@@ -22,5 +22,6 @@ export type BuyingState = {
   stampDuty: StampDutyType,
   conveyancingFee: number,
   surveyFee: number,
+  valuationFee: number,
   totalCost: number,
 }
