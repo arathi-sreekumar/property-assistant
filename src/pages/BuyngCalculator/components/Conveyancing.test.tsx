@@ -7,7 +7,7 @@ describe('Conveyancing', () => {
   it('renders Conveyancing component', () => {
     renderWithProvider(<Conveyancing />)
     expect(screen.getByText('Conveyancing Fee:')).toBeInTheDocument()
-    expect(screen.getByText('£ 1000')).toBeInTheDocument()
+    expect(screen.getByText('£ 1,000')).toBeInTheDocument()
   })
 
   it('renders and edit icon', () => {
@@ -21,7 +21,7 @@ describe('Conveyancing', () => {
 
     fireEvent.click(editButton)
 
-    expect(screen.queryByText('£ 1000')).not.toBeInTheDocument()
+    expect(screen.queryByText('£ 1,000')).not.toBeInTheDocument()
     const editInput = screen.getByDisplayValue('1000') as HTMLInputElement
     expect(editInput).toBeInTheDocument()
 
@@ -33,7 +33,7 @@ describe('Conveyancing', () => {
 
     fireEvent.click(saveButton)
 
-    expect(screen.getByText('£ 2000')).toBeInTheDocument()
+    expect(screen.getByText('£ 2,000')).toBeInTheDocument()
   })
 
   it('renders a help icon', () => {

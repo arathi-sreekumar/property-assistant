@@ -3,7 +3,7 @@ import { getValueWithUnit } from "../../../utils/unitPosition"
 import { NonEditableTextUI } from "./NonEditableText.css"
 
 type OwnProps = {
-  value: string | number
+  value: number
   unit?: UnitTypes
   classes?: string
 }
@@ -16,7 +16,7 @@ export const NonEditableText = ({
   classes = ''
 }: Props) => {
 
-  const valueWithUnit = getValueWithUnit(value as string, unit)
+  const valueWithUnit = getValueWithUnit(value, unit)
 
   return (
     <NonEditableTextUI className={classes}>

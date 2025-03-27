@@ -8,5 +8,6 @@ export const {
   setSurveyFee,
   setValuationFee,
   setTotalCost,
+  setYourCost,
   reset,
 } = BuyingSlice.actions

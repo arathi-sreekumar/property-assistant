@@ -1,9 +1,9 @@
 import { depositType } from "../types/state"
 
 type NewDepositCalcProps = {
-  homeCost: string | number
+  homeCost: number
   deposit: depositType
-  newHomeCost: string | number
+  newHomeCost: number
 }
 
 export const getNewDepositValue = ({
@@ -14,8 +14,16 @@ export const getNewDepositValue = ({
   switch (deposit.unit) {
     case 'cash':
       const newDeposit = { ...deposit }
-      newDeposit.value = ((deposit.value as number) / (homeCost as number)) * (newHomeCost as number)
+      newDeposit.value = (deposit.value / homeCost) * newHomeCost
       return newDeposit
     default: return deposit
+  }
+}
+
+export const getDepositValue = (deposit: depositType, homeCost: number) => {
+  switch (deposit.unit) {
+    case 'percentage':
+      return (deposit.value * homeCost) / 100
+    default: return deposit.value
   }
 }

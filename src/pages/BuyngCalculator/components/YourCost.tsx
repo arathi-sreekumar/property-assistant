@@ -6,30 +6,30 @@ import { FormFieldWrapper, FormRowUI } from "../../../components/Form/form.css"
 import { Label } from "../../../components/Form/Label"
 import { NonEditableText } from "../../../components/Form/NonEditableText";
 import {
-  selectHomeBuyingCost,
   selectConveyancingFee,
   selectStampDuty,
-  selectTotalCost,
   selectSurveyFee,
   selectValuationFee,
+  selectDeposit,
+  selectYourCost,
 } from "../../../state/buying/selector";
-import { setTotalCost } from "../../../state/buying/actions";
+import { setYourCost } from "../../../state/buying/actions";
 
-export const TotalCost = () => {
+export const YourCost = () => {
   const dispatch = useAppDispatch()
 
-  const totalCost = useAppSelector(selectTotalCost)
-  const homeCost = useAppSelector(selectHomeBuyingCost)
+  const yourCost = useAppSelector(selectYourCost)
+  const deposit = useAppSelector(selectDeposit)
   const stampDuty = useAppSelector(selectStampDuty)
   const conveyancingFee = useAppSelector(selectConveyancingFee)
   const surveyFee = useAppSelector(selectSurveyFee)
   const valuationFee = useAppSelector(selectValuationFee)
 
   useEffect(() => {
-    dispatch(setTotalCost())
+    dispatch(setYourCost())
   }, [
     conveyancingFee,
-    homeCost,
+    deposit,
     stampDuty,
     surveyFee,
     valuationFee,
@@ -37,9 +37,9 @@ export const TotalCost = () => {
 
   return (
     <FormRowUI>
-      <Label>Total cost to buy:</Label>
+      <Label>Your cost of buying:</Label>
       <FormFieldWrapper>
-        <NonEditableText classes="total" value={totalCost} />
+        <NonEditableText classes="total" value={yourCost} />
       </FormFieldWrapper>
     </FormRowUI>
   )

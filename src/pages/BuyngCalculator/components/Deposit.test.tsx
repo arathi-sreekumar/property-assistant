@@ -13,7 +13,7 @@ describe('Deposit', () => {
   it('renders and edit icon button', () => {
     renderWithProvider(<Deposit />)
     expect(screen.getByRole('button', { name: /Edit/i })).toBeInTheDocument()
-    expect(screen.queryByText('£ 12000')).toBeInTheDocument()
+    expect(screen.queryByText('£ 12,000')).toBeInTheDocument()
   })
 
   it('can edit deposit unit', () => {
@@ -44,7 +44,7 @@ describe('Deposit', () => {
 
     fireEvent.click(editButton)
 
-    expect(screen.queryByText('£ 12000')).not.toBeInTheDocument()
+    expect(screen.queryByText('£ 12,000')).not.toBeInTheDocument()
     const editInput = screen.getByDisplayValue('12000') as HTMLInputElement
     expect(editInput).toBeInTheDocument()
 
@@ -56,6 +56,6 @@ describe('Deposit', () => {
 
     fireEvent.click(saveButton)
 
-    expect(screen.getByText('£ 2000')).toBeInTheDocument()
+    expect(screen.getByText('£ 2,000')).toBeInTheDocument()
   })
 })

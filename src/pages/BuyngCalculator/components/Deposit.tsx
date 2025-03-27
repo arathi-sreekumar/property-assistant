@@ -31,9 +31,9 @@ export const Deposit = () => {
   const getValueForUnitChange = (fieldValue: FieldState) => {
     switch (fieldValue.unit) {
       case 'cash':
-        return ((fieldValue.value as number) / 100) * homeCost
+        return (fieldValue.value / 100) * homeCost
       default:
-        return ((fieldValue.value as number) / homeCost) * 100
+        return (fieldValue.value / homeCost) * 100
     }
   }
 

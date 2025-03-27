@@ -27,3 +27,7 @@ export const selectValuationFee = (state: RootState) => {
 export const selectTotalCost = (state: RootState) => {
   return state.buy.totalCost
 }
+
+export const selectYourCost = (state: RootState) => {
+  return state.buy.yourCost
+}

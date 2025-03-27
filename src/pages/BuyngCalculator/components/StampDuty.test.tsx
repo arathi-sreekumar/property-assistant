@@ -20,7 +20,7 @@ describe('StampDuty', () => {
     })
 
     await waitFor(() => {
-      expect(screen.getByText('£ 1000')).toBeInTheDocument()
+      expect(screen.getByText('£ 1,000')).toBeInTheDocument()
     })
   })
 
@@ -31,14 +31,14 @@ describe('StampDuty', () => {
     })
 
     await waitFor(() => {
-      expect(screen.getByText('£ 1000')).toBeInTheDocument()
+      expect(screen.getByText('£ 1,000')).toBeInTheDocument()
 
       const buyerTypeSelect = screen.getByLabelText('buyerType') as HTMLSelectElement
 
       fireEvent.change(buyerTypeSelect, { target: { value: 'singleHome' } })
 
       expect(buyerTypeSelect).toHaveValue('singleHome')
-      expect(screen.getByText('£ 6000')).toBeInTheDocument()
+      expect(screen.getByText('£ 6,000')).toBeInTheDocument()
     })
   })
 
@@ -50,14 +50,14 @@ describe('StampDuty', () => {
     })
 
     await waitFor(() => {
-      expect(screen.getByText('£ 1000')).toBeInTheDocument()
+      expect(screen.getByText('£ 1,000')).toBeInTheDocument()
 
       const buyerTypeSelect = screen.getByLabelText('buyerType') as HTMLSelectElement
 
       fireEvent.change(buyerTypeSelect, { target: { value: 'secondHome' } })
 
       expect(buyerTypeSelect).toHaveValue('secondHome')
-      expect(screen.getByText('£ 22000')).toBeInTheDocument()
+      expect(screen.getByText('£ 22,000')).toBeInTheDocument()
     })
   })
 
@@ -69,14 +69,14 @@ describe('StampDuty', () => {
     })
 
     await waitFor(() => {
-      expect(screen.getByText('£ 1000')).toBeInTheDocument()
+      expect(screen.getByText('£ 1,000')).toBeInTheDocument()
 
       const buyerTypeSelect = screen.getByLabelText('buyerType') as HTMLSelectElement
 
       fireEvent.change(buyerTypeSelect, { target: { value: 'buyToLet' } })
 
       expect(buyerTypeSelect).toHaveValue('buyToLet')
-      expect(screen.getByText('£ 22000')).toBeInTheDocument()
+      expect(screen.getByText('£ 22,000')).toBeInTheDocument()
     })
   })
 

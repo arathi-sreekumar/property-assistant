@@ -7,7 +7,7 @@ describe('Home Price', () => {
   it('renders Home Price component', () => {
     renderWithProvider(<HomePrice />)
     expect(screen.getByText('Price of the Home:')).toBeInTheDocument()
-    expect(screen.getByText('£ 120000')).toBeInTheDocument()
+    expect(screen.getByText('£ 120,000')).toBeInTheDocument()
   })
 
   it('renders and edit icon', () => {
@@ -21,7 +21,7 @@ describe('Home Price', () => {
 
     fireEvent.click(editButton)
 
-    expect(screen.queryByText('£ 120000')).not.toBeInTheDocument()
+    expect(screen.queryByText('£ 120,000')).not.toBeInTheDocument()
     const editInput = screen.getByDisplayValue('120000') as HTMLInputElement
     expect(editInput).toBeInTheDocument()
 
@@ -33,6 +33,6 @@ describe('Home Price', () => {
 
     fireEvent.click(saveButton)
 
-    expect(screen.getByText('£ 200000')).toBeInTheDocument()
+    expect(screen.getByText('£ 200,000')).toBeInTheDocument()
   })
 })
