@@ -1,0 +1,1 @@
+export declare const LabelUI: import("styled-components/dist/types").IStyledComponentBase<"web", import("styled-components").FastOmit<import("react").ClassAttributes<HTMLLabelElement> & import("react").LabelHTMLAttributes<HTMLLabelElement>, never>> & string;

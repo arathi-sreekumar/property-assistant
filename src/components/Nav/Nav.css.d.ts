@@ -1,0 +1,3 @@
+export declare const NavUI: import("styled-components/dist/types").IStyledComponentBase<"web", import("styled-components").FastOmit<import("react").ClassAttributes<HTMLElement> & import("react").HTMLAttributes<HTMLElement>, never>> & string;
+export declare const NavWrapper: import("styled-components/dist/types").IStyledComponentBase<"web", import("styled-components").FastOmit<import("react").ClassAttributes<HTMLDivElement> & import("react").HTMLAttributes<HTMLDivElement>, never>> & string;
+export declare const NavItemWrapper: import("styled-components/dist/types").IStyledComponentBase<"web", import("styled-components").FastOmit<import("react").ClassAttributes<HTMLDivElement> & import("react").HTMLAttributes<HTMLDivElement>, never>> & string;

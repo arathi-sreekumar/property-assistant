@@ -1,6 +1,6 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import { BrowserRouter } from 'react-router-dom'
+import { HashRouter as Router } from "react-router-dom";
 import { Provider } from 'react-redux'
 import { QueryClientProvider, QueryClient } from '@tanstack/react-query'
 
@@ -19,7 +19,7 @@ const queryClient = new QueryClient()
 deferRender().then(() => {
   createRoot(document.getElementById('root')!).render(
     <StrictMode>
-      <BrowserRouter>
+      <Router>
         <Provider store={store}>
           <QueryClientProvider client={queryClient}>
             <GlobalStyles />
@@ -27,7 +27,7 @@ deferRender().then(() => {
             <App />
           </QueryClientProvider>
         </Provider>
-      </BrowserRouter>
+      </Router>
     </StrictMode>,
   )
 })

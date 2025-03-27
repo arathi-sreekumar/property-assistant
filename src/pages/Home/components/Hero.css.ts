@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const HeroUI = styled('div')`
   background: var(--white-800);
-  background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('/property.png');
+  background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('/property-assistant/property.png');
   background-size: contain;
   background-repeat: round;
   display: flex;

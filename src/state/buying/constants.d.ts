@@ -1,0 +1,11 @@
+import { SelectOptionType } from "../../types/form";
+import { BuyerObjectType } from "../../types/state";
+export declare const INITIAL_HOME_COST = 120000;
+export declare const INITIAL_DEPOSIT: number;
+export declare const INITIAL_CONVEYANCING_FEE = 1000;
+export declare const INITIAL_SURVEY_FEE = 500;
+export declare const INITIAL_VALUATION_FEE = 300;
+export declare const INITIAL_TOTAL_COST: number;
+export declare const DepositUnits: SelectOptionType[];
+export declare const BUYER_TYPE: BuyerObjectType;
+export declare const BuyerTypesList: SelectOptionType[];

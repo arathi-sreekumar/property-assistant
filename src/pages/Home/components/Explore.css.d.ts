@@ -1,0 +1,3 @@
+export declare const ExploreWrapper: import("styled-components/dist/types").IStyledComponentBase<"web", import("styled-components").FastOmit<import("react").ClassAttributes<HTMLDivElement> & import("react").HTMLAttributes<HTMLDivElement>, never>> & string;
+export declare const ExploreUI: import("styled-components/dist/types").IStyledComponentBase<"web", import("styled-components").FastOmit<import("react").ClassAttributes<HTMLDivElement> & import("react").HTMLAttributes<HTMLDivElement>, never>> & string;
+export declare const SubTitleUI: import("styled-components/dist/types").IStyledComponentBase<"web", import("styled-components").FastOmit<import("react").ClassAttributes<HTMLHeadingElement> & import("react").HTMLAttributes<HTMLHeadingElement>, never>> & string;

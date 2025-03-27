@@ -1,0 +1,1 @@
+export declare const InputUI: import("styled-components/dist/types").IStyledComponentBase<"web", import("styled-components").FastOmit<import("react").ClassAttributes<HTMLInputElement> & import("react").InputHTMLAttributes<HTMLInputElement>, never>> & string;

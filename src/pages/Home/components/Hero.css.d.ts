@@ -1,0 +1,2 @@
+export declare const HeroUI: import("styled-components/dist/types").IStyledComponentBase<"web", import("styled-components").FastOmit<import("react").ClassAttributes<HTMLDivElement> & import("react").HTMLAttributes<HTMLDivElement>, never>> & string;
+export declare const CaptionUI: import("styled-components/dist/types").IStyledComponentBase<"web", import("styled-components").FastOmit<import("react").ClassAttributes<HTMLParagraphElement> & import("react").HTMLAttributes<HTMLParagraphElement>, never>> & string;
