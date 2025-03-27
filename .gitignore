@@ -141,3 +141,6 @@ dist-ssr
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+# this is to prevent pushing the d.ts files generated for ghpages
+*.d.ts

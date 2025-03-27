@@ -15,7 +15,7 @@ export const Intro = () => {
       </ColumnUI>
       <ColumnUI>
         <ImageUI
-          src='/property_calc.jpg'
+          src='/property-assistant/property_calc.jpg'
           alt='Image representing calculations involved in a property transaction'
         />
       </ColumnUI>
