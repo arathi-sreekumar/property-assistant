@@ -80,7 +80,6 @@ export const Deposit = () => {
           id="deposit"
         />
       </FormRowUI>
-      {error && (<ErrorUI>{error}</ErrorUI>)}
     </>
   )
 }

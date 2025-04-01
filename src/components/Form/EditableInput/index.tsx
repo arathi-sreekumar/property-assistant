@@ -21,6 +21,7 @@ type OwnProps = {
   additionalInfo?: string
   unitOptions?: Array<SelectOptionType>,
   getValueForUnitChange?: (fieldValues: FieldState) => number
+  validate?: (fieldValues: FieldState) => string
 }
 type Props = InputProps & OwnProps
 
@@ -31,11 +32,14 @@ export const EditableInput = ({
   unit,
   unitOptions,
   getValueForUnitChange,
+  validate,
   ...rest
 }: Props) => {
   const [isEditing, setIsEditing] = useState(false)
   const [inputValue, setInputValue] = useState<number>(value)
   const [unitValue, setUnitValue] = useState(unit)
+  const initialError = validate?.({ unit, value })
+  const [error, setError] = useState(initialError)
 
   useEffect(() => {
     setUnitValue(unit)
@@ -50,6 +54,7 @@ export const EditableInput = ({
 
   const onInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(Number(event.target.value))
+    validate
   }
 
   const save = () => {
@@ -111,33 +116,35 @@ export const EditableInput = ({
   const valueWithUnit = getValueWithUnit(inputValue, unitValue)
 
   return (
-    <EditableInputUI>
-      {
-        isEditing
-          ? (<>
-            {showUnitSelection()}
-            <Input
-              value={inputValue}
-              onChange={onInputChange}
-              onBlur={save}
-              onKeyDown={keyDownHandler}
-              {...rest}
-            />
-            <IconButton onClick={save} title="Save">
-              <CheckCircle />
-            </IconButton>
-          </>)
-          : (
-            <EditableTextIconWrapper>
-              <EditableText onClick={startEditing}>
-                {`${valueWithUnit} ${additionalInfo}`}
-              </EditableText>
-              <IconButton onClick={startEditing} title="Edit">
-                <PenCircle />
+    <>
+      <EditableInputUI>
+        {
+          isEditing
+            ? (<>
+              {showUnitSelection()}
+              <Input
+                value={inputValue}
+                onChange={onInputChange}
+                onBlur={save}
+                onKeyDown={keyDownHandler}
+                {...rest}
+              />
+              <IconButton onClick={save} title="Save">
+                <CheckCircle />
               </IconButton>
-            </EditableTextIconWrapper>
-          )
-      }
-    </EditableInputUI>
+            </>)
+            : (
+              <EditableTextIconWrapper>
+                <EditableText onClick={startEditing}>
+                  {`${valueWithUnit} ${additionalInfo}`}
+                </EditableText>
+                <IconButton onClick={startEditing} title="Edit">
+                  <PenCircle />
+                </IconButton>
+              </EditableTextIconWrapper>
+            )
+        }
+      </EditableInputUI>
+    </>
   )
 }

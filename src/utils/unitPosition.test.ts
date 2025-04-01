@@ -16,14 +16,14 @@ describe('getUnit', () => {
 
 describe('getValueWithUnit', () => {
   it('returns £ 200 for unit cash and value 200', () => {
-    expect(getValueWithUnit('100', 'cash')).toEqual('£ 100')
+    expect(getValueWithUnit(100, 'cash')).toEqual('£ 100')
   })
 
   it('returns 10 % for unit percentage and value 10', () => {
-    expect(getValueWithUnit('10', 'percentage')).toEqual('10 %')
+    expect(getValueWithUnit(10, 'percentage')).toEqual('10 %')
   })
 
   it('returns £ 10 for value 10 and no units provided', () => {
-    expect(getValueWithUnit('10')).toEqual('£ 10')
+    expect(getValueWithUnit(10)).toEqual('£ 10')
   })
 })
